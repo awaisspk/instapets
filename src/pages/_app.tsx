@@ -1,15 +1,15 @@
 import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 
-import { PageLayout } from '@/layout';
+import { SiteLayout } from '@/layout';
 
 import '../styles/global.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <ThemeProvider attribute="class" enableSystem={true} defaultTheme="system">
-    <PageLayout>
+    <SiteLayout>
       <Component {...pageProps} />
-    </PageLayout>
+    </SiteLayout>
   </ThemeProvider>
 );
 
