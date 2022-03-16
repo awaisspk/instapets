@@ -11,7 +11,7 @@ export const SiteLayout = ({ children }: PageLayoutProps) => {
   return (
     <div className="grid grid-rows-layout">
       <Header />
-      {children}
+      <div className=" mt-[120px] w-full mx-auto">{children}</div>
       <Footer />
     </div>
   );
