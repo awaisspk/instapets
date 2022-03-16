@@ -7,7 +7,12 @@ import { SiteLayout } from '@/layout';
 import '../styles/global.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <ThemeProvider attribute="class" enableSystem={true} defaultTheme="system">
+  <ThemeProvider
+    attribute="class"
+    enableColorScheme={false}
+    enableSystem={true}
+    defaultTheme="light"
+  >
     <NextNProgress />
     <SiteLayout>
       <Component {...pageProps} />

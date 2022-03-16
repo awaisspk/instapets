@@ -25,7 +25,7 @@ export const Header = () => {
         'flex fixed backdrop-blur-sm bg-white/60 items-center w-full z-50 transition-all duration-500  dark:border-gray-800',
         'dark:bg-black/5',
         {
-          'h-[70px] border-b-[1px] dark:border-gray-800 dark:bg-black/30':
+          'h-[70px] border-b-[1px] dark:border-gray-800 dark:bg-bodyDark/30':
             isScollPassed,
           'h-[100px]': !isScollPassed,
         }

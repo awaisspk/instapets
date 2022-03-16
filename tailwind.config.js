@@ -15,6 +15,9 @@ module.exports = {
       '6xl': '4rem',
     },
     extend: {
+      colors: {
+        bodyDark: '#121212',
+      },
       gridTemplateRows: {
         layout: 'max-content 1fr max-content',
       },

@@ -11,9 +11,12 @@
 @layer base {
   html {
     font-family: Inter, system-ui, sans-serif;
-    @apply transition-colors;
+  }
+  body {
+    @apply dark:bg-bodyDark dark:text-gray-200;
   }
 }
+
 * {
   @apply text-gray-700 dark:text-gray-200;
 }
