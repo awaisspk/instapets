@@ -11,12 +11,9 @@
 @layer base {
   html {
     font-family: Inter, system-ui, sans-serif;
+    @apply transition-colors;
   }
 }
-
-@tailwind components;
-
-@tailwind utilities;
 
 .content p {
   @apply my-6;
@@ -25,3 +22,6 @@
 .content ul {
   @apply my-6;
 }
+
+@tailwind components;
+@tailwind utilities;

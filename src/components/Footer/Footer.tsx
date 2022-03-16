@@ -1,7 +1,14 @@
+import { Link } from '../Button';
+
 export const Footer = () => {
   return (
-    <header>
-      <div>footer</div>
-    </header>
+    <footer className="flex justify-center py-3">
+      <span>
+        Build by Awais iqbal.{' '}
+        <Link target="_blank" href="https://github.com/awaisspk">
+          github
+        </Link>
+      </span>
+    </footer>
   );
 };
