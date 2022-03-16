@@ -21,9 +21,9 @@ export const ThemeToggle = () => {
     <div>
       <IconButton onClick={handleThemeChange}>
         {theme === 'dark' ? (
-          <MoonIcon className="stroke-white" />
+          <MoonIcon className="stroke-gray-700 dark:stroke-gray-200" />
         ) : (
-          <SunIcon className="stroke-white" />
+          <SunIcon className="stroke-gray-700 dark:stroke-gray-200" />
         )}
       </IconButton>
     </div>
