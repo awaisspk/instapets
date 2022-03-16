@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 
+import { LoadingIndicator } from '@/components/LoadingIndicator';
 import { PostPreview } from '@/components/Post';
 import { PostComment } from '@/components/PostComment';
 import { Main, Meta } from '@/layout';
@@ -26,9 +27,9 @@ const PostDetails = ({
       );
       const data: Comments = await response.json();
       setComments(data);
+      setLoadingComments(false);
     };
     getComments({ userId: post.id });
-    setLoadingComments(false);
   }, [post.id]);
 
   return (
@@ -37,13 +38,15 @@ const PostDetails = ({
         <div className="grid grid-cols-1 gap-10 md:gap-5 w-[min(800px,100%-30px)] mx-auto">
           <PostPreview key={post.id} {...post} disableLink={true} />
         </div>
-        <section className="w-[min(800px,100%-30px)] mx-auto space-y-10">
+        <section className="w-[min(800px,100%-30px)] grid mx-auto space-y-10">
           <h3 className="text-2xl font-bold my-10">Comments</h3>
           {comments?.data.length === 0 && (
             <div>Be the first to comment on this post</div>
           )}
           {loadingComments ? (
-            <div className="text-gray-300">Loading comments</div>
+            <div className="justify-self-center">
+              <LoadingIndicator />
+            </div>
           ) : (
             comments?.data.map((comment) => (
               <PostComment key={comment.id} {...comment} />
