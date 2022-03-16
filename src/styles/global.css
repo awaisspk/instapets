@@ -1,11 +1,17 @@
 @tailwind base;
 
-a {
-  @apply text-blue-700;
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-var-latin.woff2');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
 }
 
-a:hover {
-  @apply border-b-2 border-blue-700;
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
+  }
 }
 
 @tailwind components;
