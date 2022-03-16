@@ -1,19 +1,48 @@
+import { InferGetServerSidePropsType } from 'next';
+
+import { PostPreview } from '@/components/Post';
 import { Main } from '@/layout/Main';
 import { Meta } from '@/layout/Meta';
+import { Post } from '@/types';
 
-const Index = () => {
+const HomePage = ({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <Main
       meta={
         <Meta
-          title="Next.js Boilerplate Presentation"
-          description="Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework."
+          title="Excelorithm"
+          description="Social media site for developers"
         />
       }
     >
-      <h1>Home page</h1>
+      <div className="grid grid-cols-1 gap-10 md:gap-5 w-[min(600px,100%-30px)] mx-auto">
+        {data.map((post) => {
+          return <PostPreview key={post.id} {...post} />;
+        })}
+      </div>
     </Main>
   );
 };
 
-export default Index;
+type Posts = {
+  data: Post[];
+};
+
+export const getServerSideProps = async () => {
+  const response = await fetch('https://dummyapi.io/data/v1/post', {
+    headers: {
+      'app-id': process.env.NEXT_PUBLIC_APP_ID!,
+    },
+  });
+  const { data }: Posts = await response.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+export default HomePage;
