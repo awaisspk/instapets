@@ -59,6 +59,7 @@ export const PostPreview = (props: PostPreviewProps) => {
             src={image}
             alt=""
             layout="fill"
+            objectFit="cover"
             className="hover:scale-105 transition-all"
           />
         </a>
