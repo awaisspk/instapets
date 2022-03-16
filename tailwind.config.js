@@ -38,6 +38,9 @@ module.exports = {
           900: '#2a4365',
         },
       },
+      gridTemplateRows: {
+        layout: 'max-content 1fr max-content',
+      },
     },
   },
   plugins: [],
