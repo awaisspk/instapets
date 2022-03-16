@@ -7,9 +7,10 @@ import { ThemeToggle } from '../ThemeToggle';
 
 export const Header = () => {
   const [isScollPassed, setIsScrollPassed] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
+      if (window.scrollY > 150) {
         setIsScrollPassed(true);
       } else {
         setIsScrollPassed(false);
@@ -17,6 +18,7 @@ export const Header = () => {
     };
     window.addEventListener('scroll', handleScroll);
   });
+
   return (
     <header
       className={cx(
