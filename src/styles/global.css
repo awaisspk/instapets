@@ -18,7 +18,7 @@
 }
 
 * {
-  @apply text-gray-700 dark:text-gray-200;
+  @apply text-gray-700 dark:text-gray-200 outline-none  focus-visible:ring-2 ring-blue-400;
 }
 
 .content p {
