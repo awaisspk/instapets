@@ -49,7 +49,7 @@ export const PostPreview = (props: PostPreviewProps) => {
       <NextLink href={`/post/${id}`}>
         <a
           className={cx(
-            'relative block aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden',
+            'relative block aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden bg-blue-100/20',
             {
               'pointer-events-none': disableLink,
             }
