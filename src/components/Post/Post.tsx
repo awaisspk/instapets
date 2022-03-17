@@ -30,22 +30,38 @@ const Likes = ({ likes }: { likes: number }) => {
 
 type PostPreviewProps = Post & {
   disableLink?: boolean;
+  hideUser?: boolean;
 };
 
 export const PostPreview = (props: PostPreviewProps) => {
-  const { text, tags, likes, id, owner, publishDate, image, disableLink } =
-    props;
+  const {
+    text,
+    tags,
+    likes,
+    id,
+    owner,
+    publishDate,
+    image,
+    disableLink,
+    hideUser,
+  } = props;
   return (
     <section className=" relative rounded-xl md:p-5 ">
-      <div className="backdrop-blur-xl z-10 mb-3">
-        <Profile
-          key={id}
-          date={publishDate}
-          firstName={owner.firstName}
-          lastName={owner.lastName}
-          picture={owner.picture}
-        />
-      </div>
+      {!hideUser && (
+        <div className="backdrop-blur-xl z-10 mb-3">
+          <NextLink href={`profile/${owner.id}`}>
+            <a>
+              <Profile
+                key={id}
+                date={publishDate}
+                firstName={owner.firstName}
+                lastName={owner.lastName}
+                picture={owner.picture}
+              />
+            </a>
+          </NextLink>
+        </div>
+      )}
       <NextLink href={`/post/${id}`}>
         <a
           className={cx(
