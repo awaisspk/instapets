@@ -49,7 +49,7 @@ export const PostPreview = (props: PostPreviewProps) => {
     <section className=" relative rounded-xl md:p-5 ">
       {!hideUser && (
         <div className="backdrop-blur-xl z-10 mb-3">
-          <NextLink href={`profile/${owner.id}`}>
+          <NextLink href={`/profile/${owner.id}`}>
             <a>
               <Profile
                 key={id}
