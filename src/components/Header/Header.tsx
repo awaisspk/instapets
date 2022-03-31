@@ -35,7 +35,7 @@ export const Header = () => {
         <div className="relative z-20">
           <Link href="/">
             <a className="text-2xl relative md:text-3xl text-gray-700 dark:text-gray-200 font-bold select-none">
-              Excelorythm
+              InstaPets
             </a>
           </Link>
           <div className="absolute z-10 w-full h-full blur-xl" />
